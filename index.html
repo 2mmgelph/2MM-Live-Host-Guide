@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2MM Live Seller Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --ivory: #f3ede3;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --deep: #1a1410;
+    --brown: #4a3728;
+    --muted: #8a7560;
+    --success: #4a7c59;
+    --accent: #c9a96e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--deep);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px 8px;
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .nav-brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .nav-brand-sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .nav-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 10px;
+  }
+
+  .nav-tabs::-webkit-scrollbar { display: none; }
+
+  .nav-tab {
+    padding: 10px 16px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .nav-tab:hover { color: var(--gold-light); }
+  .nav-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* SECTIONS */
+  .section { display: none; padding: 24px 20px 40px; max-width: 900px; margin: 0 auto; animation: fadeIn 0.3s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* HOME */
+  .home-hero {
+    background: linear-gradient(135deg, var(--deep) 0%, var(--brown) 100%);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 60% 40%, rgba(201,169,110,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .home-hero-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .home-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .home-hero h1 em { color: var(--gold); font-style: italic; }
+
+  .home-hero p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .promo-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--deep);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 100px;
+  }
+
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .quick-card {
+    background: #fff;
+    border: 1px solid var(--gold-light);
+    border-radius: 14px;
+    padding: 18px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .quick-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,169,110,0.2); }
+
+  .quick-card-icon { font-size: 22px; margin-bottom: 8px; }
+  .quick-card-title { font-size: 13px; font-weight: 500; color: var(--deep); margin-bottom: 2px; }
+  .quick-card-sub { font-size: 11px; color: var(--muted); }
+
+  /* SECTION HEADER */
+  .section-header { margin-bottom: 24px; }
+  .section-header-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .section-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--deep); line-height: 1.1; }
+  .section-divider { width: 40px; height: 2px; background: var(--gold); margin-top: 10px; }
+
+  /* CARDS */
+  .card {
+    background: #fff;
+    border: 1px solid var(--ivory);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  /* BENEFIT PILLS */
+  .benefit-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border-radius: 10px;
+  }
+
+  .benefit-check {
+    width: 22px; height: 22px;
+    background: var(--success);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .benefit-text { font-size: 14px; color: var(--deep); line-height: 1.5; }
+  .benefit-text strong { font-weight: 500; }
+
+  /* STEPS */
+  .steps { display: flex; flex-direction: column; gap: 12px; }
+
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 32px; height: 32px;
+    background: var(--deep);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .step-body { padding-top: 4px; }
+  .step-body strong { font-size: 14px; font-weight: 500; display: block; margin-bottom: 2px; }
+  .step-body span { font-size: 13px; color: var(--muted); }
+
+  /* INGREDIENTS TABLE */
+  .ing-grid { display: flex; flex-direction: column; gap: 8px; }
+
+  .ing-row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border-radius: 10px;
+    align-items: flex-start;
+  }
+
+  .ing-name { font-size: 13px; font-weight: 500; color: var(--deep); min-width: 160px; flex-shrink: 0; }
+  .ing-benefit { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+  /* FAQ */
+  .faq-item {
+    border: 1px solid var(--ivory);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .faq-q {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+  }
+
+  .faq-q .arrow { color: var(--gold); font-size: 18px; transition: transform 0.2s; }
+  .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 16px 14px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+    background: #fff;
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* OBJECTIONS */
+  .obj-item {
+    background: #fff;
+    border: 1px solid var(--ivory);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .obj-q { font-size: 13px; color: var(--brown); font-weight: 500; margin-bottom: 6px; }
+  .obj-q::before { content: '❝ '; color: var(--gold); }
+  .obj-a { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .obj-a::before { content: '→ '; color: var(--success); font-weight: 500; }
+
+  /* PRICING */
+  .price-hero {
+    background: var(--deep);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .price-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .price-srp { font-size: 13px; color: var(--muted); text-decoration: line-through; }
+  .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 52px; color: #fff; line-height: 1; }
+  .price-amount span { font-size: 24px; color: var(--gold); }
+  .price-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+
+  .promo-card {
+    background: linear-gradient(135deg, #c9a96e, #e8d5b0);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .promo-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--brown); margin-bottom: 6px; }
+  .promo-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--deep); margin-bottom: 4px; }
+  .promo-sub { font-size: 12px; color: var(--brown); }
+
+  /* GALLERY */
+  .gallery-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+
+  .gallery-tab {
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    border: 1px solid var(--gold-light);
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .gallery-tab.active { background: var(--deep); color: var(--gold); border-color: var(--deep); }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .gallery-item {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: var(--ivory);
+    border: 1px solid var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    padding: 16px;
+    height: 100%;
+  }
+
+  .gallery-placeholder-icon { font-size: 28px; }
+
+  .gallery-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(26,20,16,0.8));
+    color: #fff;
+    font-size: 11px;
+    padding: 20px 10px 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .upload-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--deep);
+    color: var(--gold);
+    border: none;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+  }
+
+  .upload-btn:hover { opacity: 0.85; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,20,16,0.95);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .lightbox-caption {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* COMPLIANCE */
+  .compliance-badge {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px;
+    background: var(--cream);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .compliance-badge-icon { font-size: 20px; flex-shrink: 0; }
+  .compliance-badge-title { font-size: 13px; font-weight: 500; color: var(--deep); }
+  .compliance-badge-value { font-size: 12px; color: var(--muted); font-family: monospace; margin-top: 2px; }
+
+  /* TAGLINE ROTATOR */
+  .tagline-box {
+    background: var(--deep);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .tagline-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .tagline-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); line-height: 1.3; font-style: italic; }
+
+  /* LOGISTICS */
+  .delivery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+
+  .delivery-item {
+    background: #fff;
+    border: 1px solid var(--ivory);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .delivery-icon { font-size: 20px; margin-bottom: 6px; }
+  .delivery-area { font-size: 12px; font-weight: 500; color: var(--deep); margin-bottom: 2px; }
+  .delivery-time { font-size: 12px; color: var(--muted); }
+
+  /* RESPONSIVE */
+  @media (min-width: 600px) {
+    .quick-grid { grid-template-columns: repeat(4, 1fr); }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div>
+      <div class="nav-brand-name">2 Minute Miracle Gel</div>
+      <div class="nav-brand-sub">Live Seller Reference Guide</div>
+    </div>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('home')">🏠 Home</button>
+    <button class="nav-tab" onclick="showSection('product')">🧴 Product</button>
+    <button class="nav-tab" onclick="showSection('howtouse')">💡 How to Use</button>
+    <button class="nav-tab" onclick="showSection('ingredients')">💎 Ingredients</button>
+    <button class="nav-tab" onclick="showSection('pricing')">💰 Pricing</button>
+    <button class="nav-tab" onclick="showSection('objections')">💬 Objections</button>
+    <button class="nav-tab" onclick="showSection('faq')">❓ FAQs</button>
+    <button class="nav-tab" onclick="showSection('gallery')">🖼 Gallery</button>
+    <button class="nav-tab" onclick="showSection('compliance')">🏛 Compliance</button>
+    <button class="nav-tab" onclick="showSection('logistics')">🚚 Logistics</button>
+    <button class="nav-tab" onclick="showSection('taglines')">✨ Taglines</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="section active" id="home">
+  <div class="home-hero">
+    <div class="home-hero-tag">Ice Elements · Philippines 2026</div>
+    <h1>2 Minute<br><em>Miracle Gel</em></h1>
+    <p>Your complete live selling reference — tap any section to get started.</p>
+    <div class="promo-badge">🔥 50% OFF — First 3 Orders!</div>
+  </div>
+
+  <div class="quick-grid">
+    <div class="quick-card" onclick="showSection('product')">
+      <div class="quick-card-icon">🧴</div>
+      <div class="quick-card-title">Product Info</div>
+      <div class="quick-card-sub">Overview & benefits</div>
+    </div>
+    <div class="quick-card" onclick="showSection('howtouse')">
+      <div class="quick-card-icon">💡</div>
+      <div class="quick-card-title">How to Use</div>
+      <div class="quick-card-sub">3 easy steps</div>
+    </div>
+    <div class="quick-card" onclick="showSection('pricing')">
+      <div class="quick-card-icon">💰</div>
+      <div class="quick-card-title">Pricing & Promo</div>
+      <div class="quick-card-sub">SRP + live promos</div>
+    </div>
+    <div class="quick-card" onclick="showSection('objections')">
+      <div class="quick-card-icon">💬</div>
+      <div class="quick-card-title">Objections</div>
+      <div class="quick-card-sub">Handle questions fast</div>
+    </div>
+    <div class="quick-card" onclick="showSection('faq')">
+      <div class="quick-card-icon">❓</div>
+      <div class="quick-card-title">FAQs</div>
+      <div class="quick-card-sub">Common questions</div>
+    </div>
+    <div class="quick-card" onclick="showSection('gallery')">
+      <div class="quick-card-icon">🖼</div>
+      <div class="quick-card-title">Gallery</div>
+      <div class="quick-card-sub">Photos & flashcards</div>
+    </div>
+    <div class="quick-card" onclick="showSection('ingredients')">
+      <div class="quick-card-icon">💎</div>
+      <div class="quick-card-title">Ingredients</div>
+      <div class="quick-card-sub">Key actives & benefits</div>
+    </div>
+    <div class="quick-card" onclick="showSection('taglines')">
+      <div class="quick-card-icon">✨</div>
+      <div class="quick-card-title">Taglines</div>
+      <div class="quick-card-sub">Sales messaging</div>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;">
+    <div class="card-title">Shop Links</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Direct buyers here during the live!</p>
+    <a href="https://2mmgelph.com" target="_blank" style="display:inline-block;background:var(--deep);color:var(--gold);padding:10px 24px;border-radius:100px;font-size:13px;text-decoration:none;letter-spacing:1px;">🛒 2mmgelph.com</a>
+  </div>
+</div>
+
+<!-- PRODUCT -->
+<div class="section" id="product">
+  <div class="section-header">
+    <div class="section-header-tag">Section B</div>
+    <h2>Product Overview</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What It Is</div>
+    <p style="font-size:14px;line-height:1.7;color:var(--brown);margin-bottom:12px;">A first-of-its-kind, non-abrasive exfoliating gel that gently rolls away dead skin in just <strong>2 minutes</strong> — leaving skin visibly smoother, brighter, and deeply hydrated. No grains. No harsh acids. Just real results.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--brown);">50ml · 1.7 fl oz</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--brown);">All Skin Types</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--brown);">1M+ Sold Globally</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:4px 12px;font-size:11px;color:var(--brown);">FDA Notified ✅</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">7 Benefits in One</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Deeply Cleanses</strong> — removes impurities for fresh, clean skin</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Gentle Exfoliator</strong> — dead skin visibly rolls away, no scrubbing needed</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Brightens Complexion</strong> — revives dull and uneven skin tone</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Minimizes Pores</strong> — refines skin texture visibly</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Primes Skin</strong> — perfect base before makeup or treatments</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Anti-Aging</strong> — smooths fine lines, supports youthful-looking skin</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Deep Hydration</strong> — nourishes with lasting moisture all day</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Skin Problems We Solve</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Dry & flaky skin</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Dark spots & uneven skin tone</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Acne marks & blemishes</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Dull & tired-looking skin</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Suitable For</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Normal</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Dry</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Oily</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Combination</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Sensitive</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Mature</span>
+      <span style="background:var(--cream);border:1px solid var(--gold-light);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--brown);">Acne-Prone</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW TO USE -->
+<div class="section" id="howtouse">
+  <div class="section-header">
+    <div class="section-header-tag">Simple Steps</div>
+    <h2>How to Use</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">3 Easy Steps — 2 Minutes Lang!</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <strong>Apply</strong>
+          <span>Massage a thin layer of the gel onto a dry face or target area. Use a small amount — dime-sized.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <strong>Watch It Work</strong>
+          <span>In 45–60 seconds, the gel will liquefy. Rub in circular motions and it will ball up — you can literally see it working!</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <strong>Rinse & Glow</strong>
+          <span>Rinse off. Smooth, clean, glowing skin in just 2 minutes. Hindi lang glow — real skin improvement!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pro Tips for Sellers</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">★</div><div class="benefit-text">Best used on <strong>dry skin</strong> — not wet. This is key for the balling effect!</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">★</div><div class="benefit-text">Use <strong>morning and night</strong> for best results</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">★</div><div class="benefit-text">Can also be used on <strong>neck, heels, elbows, and lips</strong></div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">★</div><div class="benefit-text">If balling is not visible — still working! Depends on skin type and humidity</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results Timeline</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num" style="background:var(--gold);color:var(--deep);">D1</div>
+        <div class="step-body"><strong>Day 1 — First Use</strong><span>Instantly smoother, brighter skin. Dead skin visibly rolls away. Makeup applies better.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--gold);color:var(--deep);">W2</div>
+        <div class="step-body"><strong>Week 1–2 — Consistent Use</strong><span>Refined pores, transformed texture. Blemishes begin to fade.</span></div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--gold);color:var(--deep);">M1</div>
+        <div class="step-body"><strong>Month 1+ — Daily Ritual</strong><span>Consistent glow, even tone. This becomes non-negotiable.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INGREDIENTS -->
+<div class="section" id="ingredients">
+  <div class="section-header">
+    <div class="section-header-tag">What's Inside</div>
+    <h2>Key Ingredients</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Active Ingredients & Benefits</div>
+    <div class="ing-grid">
+      <div class="ing-row"><div class="ing-name">🌿 Aloe Vera</div><div class="ing-benefit">Soothes & deeply hydrates — calms irritated skin instantly</div></div>
+      <div class="ing-row"><div class="ing-name">💧 Sodium Hyaluronate</div><div class="ing-benefit">Deep moisture & plumping — holds 1000x its weight in water</div></div>
+      <div class="ing-row"><div class="ing-name">🍵 Green Tea Extract</div><div class="ing-benefit">Powerful antioxidant — protects skin from environmental damage</div></div>
+      <div class="ing-row"><div class="ing-name">⚗️ Salicylic Acid</div><div class="ing-benefit">Clears acne marks & blemishes — unclogs pores gently</div></div>
+      <div class="ing-row"><div class="ing-name">🌱 Ginger Root Extract</div><div class="ing-benefit">Brightens & evens skin tone — reduces dark spots</div></div>
+      <div class="ing-row"><div class="ing-name">🔬 Saccharide Isomerate</div><div class="ing-benefit">Long-lasting hydration — keeps skin moisturized all day</div></div>
+      <div class="ing-row"><div class="ing-name">🌸 Peony Root Extract</div><div class="ing-benefit">Whitening & dark spot correction — for clearer, even skin</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Clean & Safe Formula</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Sulfate-Free</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Paraben-Free</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Fragrance-Free</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Cruelty-Free</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Non-Abrasive</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ Phthalate-Free</span>
+      <span style="background:#f0f7f3;border:1px solid #c3dece;border-radius:100px;padding:6px 14px;font-size:12px;color:var(--success);">✓ No Artificial Color</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="section" id="pricing">
+  <div class="section-header">
+    <div class="section-header-tag">Pricing & Promos</div>
+    <h2>Price & Offers</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="price-hero">
+    <div class="price-label">Official SRP</div>
+    <div class="price-srp">₱2,749.00</div>
+    <div class="price-amount"><span>₱</span>2,495</div>
+    <div class="price-note">Free Shipping Nationwide · Sealed Jar + Box</div>
+  </div>
+
+  <div class="promo-card">
+    <div class="promo-label">🔥 Live Exclusive Promo</div>
+    <div class="promo-title">50% OFF!</div>
+    <div class="promo-sub">For the first 3 orders during the live — don't miss it!</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Value Positioning — Use This When Selling</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">One product replaces <strong>5–7 skincare items</strong> — moisturizer, exfoliator, brightener, pore minimizer, primer, anti-aging, hydrator</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Buying separately costs <strong>₱5,000–₱10,000+</strong> — this does it all for ₱2,495</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text"><strong>Save time, save money, simplify</strong> your routine</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Order Here</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Website: <strong>2mmgelph.com</strong></p>
+    <p style="font-size:13px;color:var(--muted);">Facebook: <strong>@2mmgelphilippines</strong></p>
+  </div>
+</div>
+
+<!-- OBJECTIONS -->
+<div class="section" id="objections">
+  <div class="section-header">
+    <div class="section-header-tag">Handle It Like a Pro</div>
+    <h2>Objection Handling</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Mahal naman — ₱2,495?</div>
+    <div class="obj-a">Sa totoo lang, mas mahal pa kung bibilhin mo separately ang moisturizer, exfoliator, dark spot corrector, acne treatment, at brightening serum. This is 7-in-1 — saves you time AND money! Plus, ₱2,495 lang para sa isang buwan o higit pa ng skincare. Sulit na sulit! 💡</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Effective ba talaga?</div>
+    <div class="obj-a">Maraming honest reviews na — first use pa lang, grabe na agad ang pakiramdam. 1 million+ units sold globally. As seen on TV in the US. Gentle sa skin pero real ang results — smoother, clearer, healthier-looking skin! ✨</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Baka hindi sa skin ko mag-work?</div>
+    <div class="obj-a">Formulated for ALL skin types — dry, oily, combination, sensitive, mature, acne-prone. Kaya nga gentle ang ingredients niya — no grains, no harsh acids, no irritation. Safe for daily use! 😊</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Pag-isipan ko pa muna.</div>
+    <div class="obj-a">Sige! But take note — 50% off para sa first 3 orders ngayon sa live. Baka mawala na ang promo pag bumalik ka. Real skin improvement in 2 minutes lang — worth it talaga! 🔥</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Hindi ko nakikita mag-ball up yung gel?</div>
+    <div class="obj-a">Normal lang iyon! The balling varies per person — skin type, humidity, at kung gaano karami ang product ang ginamit ay makakaapekto. Even if hindi visible ang balling, nag-wo-work pa rin siya. You're still getting all 7 benefits! 💎</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">FDA approved ba ito?</div>
+    <div class="obj-a">Yes! We have CPN (Cosmetic Product Notification) and LTO (License to Operate) from FDA Philippines. CPN: NN-1000015979329. Safe and legit! ✅</div>
+  </div>
+
+  <div class="obj-item">
+    <div class="obj-q">Para ba ito sa lahat ng edad?</div>
+    <div class="obj-a">Yes! Suitable for ages 18 to 65+. Trusted by women and men with all skin concerns — from millennials to mature skin. Kahit si mama puwede! 😊</div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="faq">
+  <div class="section-header">
+    <div class="section-header-tag">Common Questions</div>
+    <h2>FAQs</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Pwede ba sa sensitive skin? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Yes! Super gentle ang 2MM Gel — no harsh feeling, no irritation. No grains, no harsh acids. Safe for sensitive skin and daily use. Patch test is still recommended para sa sobrang sensitive.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Kailan makikita ang results? <span class="arrow">⌄</span></div>
+    <div class="faq-a">First use pa lang — smoother and fresher na agad ang pakiramdam ng skin. Full visible results within a few days to weeks of consistent use. Results may vary per individual.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Ilan beses sa isang araw gamitin? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Morning and night for best results! Safe for daily use — gentle enough kahit dalawang beses isang araw.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">May expiry ba? <span class="arrow">⌄</span></div>
+    <div class="faq-a">36 months shelf life from manufacture. Best used within 12 months after opening. Expiry is printed on the jar and outer box. Store in a cool, dry place with the lid sealed.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Puwede bang gamitin sa katawan? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Yes! Puwede ring gamitin sa neck, heels, elbows, at lips. Multi-use talaga ang 2MM Gel!</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Gaano katagal isang jar? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Depende sa frequency ng paggamit — but typically, one jar lasts about 1 month or more with twice daily use. Dime-sized amount lang needed per application!</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Paano i-order? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Order online at 2mmgelph.com or message us on Facebook @2mmgelphilippines. Free shipping nationwide! Metro Manila: 2–4 business days. Provincial: 4–7 business days.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">FDA approved ba? <span class="arrow">⌄</span></div>
+    <div class="faq-a">Yes! FDA Notified Cosmetic Product. LTO No.: 3000015858378. CPN: NN-1000015979329. Legit at safe! ✅</div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="section" id="gallery">
+  <div class="section-header">
+    <div class="section-header-tag">Visual Assets</div>
+    <h2>Gallery</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <input type="file" id="fileInput" multiple accept="image/*" style="display:none" onchange="handleUpload(event)">
+  <button class="upload-btn" onclick="document.getElementById('fileInput').click()">+ Add Photos / Flashcards</button>
+
+  <div class="gallery-tabs">
+    <button class="gallery-tab active" onclick="filterGallery('all', this)">All</button>
+    <button class="gallery-tab" onclick="filterGallery('product', this)">Product</button>
+    <button class="gallery-tab" onclick="filterGallery('beforeafter', this)">Before & After</button>
+    <button class="gallery-tab" onclick="filterGallery('flashcard', this)">Flashcards</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" data-category="product" onclick="openLightbox('https://2mmgelph.com/cdn/shop/files/1_-_White_Cover.png', 'Product Photo')">
+      <img src="https://2mmgelph.com/cdn/shop/files/1_-_White_Cover.png" alt="Product" onerror="this.style.display='none'">
+      <div class="gallery-label">Product Photo</div>
+    </div>
+    <div class="gallery-item" data-category="product" onclick="openLightbox('https://2mmgelph.com/cdn/shop/files/Open_Jar_no_background.png', 'Open Jar')">
+      <img src="https://2mmgelph.com/cdn/shop/files/Open_Jar_no_background.png" alt="Open Jar" onerror="this.style.display='none'">
+      <div class="gallery-label">Open Jar</div>
+    </div>
+    <div class="gallery-item" data-category="beforeafter" onclick="openLightbox('https://2mmgelph.com/cdn/shop/files/BEFORE.png', 'Before')">
+      <img src="https://2mmgelph.com/cdn/shop/files/BEFORE.png" alt="Before" onerror="this.style.display='none'">
+      <div class="gallery-label">Before</div>
+    </div>
+    <div class="gallery-item" data-category="beforeafter" onclick="openLightbox('https://2mmgelph.com/cdn/shop/files/After.png', 'After')">
+      <img src="https://2mmgelph.com/cdn/shop/files/After.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">After</div>
+    </div>
+    <div class="gallery-item" data-category="beforeafter" onclick="openLightbox('/assets/b&a 1.png', 'After')">
+      <img src="https://2mmgelph.com/cdn/shop/files/After.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">After</div>
+    </div>
+    <div class="gallery-item" data-category="beforeafter" onclick="openLightbox('/assets/Kath b&a.jpg', 'Kath b&a')">
+      <img src="/assets/Kath b&a.jpg" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Kath's Before and After</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Skin Type.png', 'Skin Type')">
+      <img src="/assets/Skin Type.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Skin Type</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Product Info 2.png', 'Product Info 2')">
+      <img src="/assets/Product Info 2.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Product Info 2</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Product Info.png', 'Product Info')">
+      <img src="/assets/Product Info.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Product Info</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Benefits.png', 'Key Benefits')">
+      <img src="/assets/Benefits.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Benefits</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Flash Sale.png', 'Live Sale Flashcard')">
+      <img src="/assets/Flash Sale.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Live Sale Flashcard</div>
+    </div>
+    <div class="gallery-item" data-category="flashcard" onclick="openLightbox('/assets/Limited Stocks.png', 'Limited Stocks')">
+      <img src="/assets/Limited Stocks.png" alt="After" onerror="this.style.display='none'">
+      <div class="gallery-label">Limited Stocks</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPLIANCE -->
+<div class="section" id="compliance">
+  <div class="section-header">
+    <div class="section-header-tag">Regulatory</div>
+    <h2>Compliance & Safety</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">FDA Philippines Registration</div>
+    <div class="compliance-badge">
+      <div class="compliance-badge-icon">🏛</div>
+      <div><div class="compliance-badge-title">License to Operate (LTO)</div><div class="compliance-badge-value">3000015858378</div></div>
+    </div>
+    <div class="compliance-badge">
+      <div class="compliance-badge-icon">📋</div>
+      <div><div class="compliance-badge-title">Certificate of Product Notification (CPN)</div><div class="compliance-badge-value">NN-1000015979329</div></div>
+    </div>
+    <div class="compliance-badge">
+      <div class="compliance-badge-icon">✅</div>
+      <div><div class="compliance-badge-title">Regulatory Status</div><div class="compliance-badge-value">FDA PH Notified Cosmetic · US FDA GMP Manufacturing</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Shelf Life</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">36 months shelf life from manufacture</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Best within 12 months after opening</div></div>
+      <div class="benefit-item"><div class="benefit-check">✓</div><div class="benefit-text">Expiry printed on jar and outer box</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:#f5c6cb;">
+    <div class="card-title" style="color:#c0392b;">⚠️ Mandatory Disclaimer</div>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;">This product is a cosmetic — not intended to diagnose, treat, cure, or prevent any disease. For external use only. Patch test recommended for sensitive skin. Discontinue if irritation occurs. Results may vary.</p>
+  </div>
+</div>
+
+<!-- LOGISTICS -->
+<div class="section" id="logistics">
+  <div class="section-header">
+    <div class="section-header-tag">Fulfillment</div>
+    <h2>Logistics</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Delivery Lead Time</div>
+    <div class="delivery-grid">
+      <div class="delivery-item">
+        <div class="delivery-icon">🏙</div>
+        <div class="delivery-area">Metro Manila</div>
+        <div class="delivery-time">2–4 business days</div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🗺</div>
+        <div class="delivery-area">Provincial</div>
+        <div class="delivery-time">4–7 business days</div>
+      </div>
+    </div>
+    <div style="background:var(--cream);border-radius:10px;padding:12px 14px;font-size:13px;color:var(--muted);">📦 <strong style="color:var(--deep);">Free Shipping Nationwide</strong> — on all orders!</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Customer Support</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">📧</div><div class="benefit-text">support@2mmgelph.com</div></div>
+      <div class="benefit-item"><div class="benefit-check">💬</div><div class="benefit-text">Facebook Messenger: @2mmgelphilippines</div></div>
+      <div class="benefit-item"><div class="benefit-check">🕐</div><div class="benefit-text">Monday–Saturday, 9AM–6PM PHT</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Replacement Policy</div>
+    <p style="font-size:13px;color:var(--muted);line-height:1.7;">Damaged or defective items replaced within <strong style="color:var(--deep);">7 days of receipt</strong>. Photo proof required. Contact support with order number.</p>
+  </div>
+</div>
+
+<!-- TAGLINES -->
+<div class="section" id="taglines">
+  <div class="section-header">
+    <div class="section-header-tag">Sales Messaging</div>
+    <h2>Taglines & Scripts</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rotate These During the Live</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"Fix your skin in 2 minutes ✨"</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"Not just glow — real skin improvement."</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"Why buy 5 products when one does it all?"</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"From problem skin to healthy skin — fast."</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"Real results. Real fast. 2 minutes lang."</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"Your all-in-one skin solution."</div></div>
+      <div class="benefit-item"><div class="benefit-check" style="background:var(--gold);color:var(--deep);">✦</div><div class="benefit-text">"More than glow — it's skin repair."</div></div>
+    </div>
+  </div>
+
+  <div class="tagline-box">
+    <div class="tagline-label">Hero Positioning Line</div>
+    <div class="tagline-text">"2 Minute Miracle Gel — your all-in-one solution for smoother, clearer, healthier-looking skin in just minutes."</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key Message — Say This Often!</div>
+    <div class="benefit-list">
+      <div class="benefit-item"><div class="benefit-check">💡</div><div class="benefit-text">"Dry skin? ✔️ Dark spots? ✔️ Acne marks? ✔️ Dull skin? ✔️ — This product is for ALL of it."</div></div>
+      <div class="benefit-item"><div class="benefit-check">💡</div><div class="benefit-text">"Hindi ito para sa glow lang. Ito ay para sa confidence, convenience, at real skin improvement."</div></div>
+      <div class="benefit-item"><div class="benefit-check">💡</div><div class="benefit-text">"Save time, save money, simplify your routine."</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach(t => { if (t.getAttribute('onclick').includes(id)) t.classList.add('active'); });
+    window.scrollTo(0, 0);
+  }
+
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#galleryGrid .gallery-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.category === cat) ? '' : 'none';
+    });
+  }
+
+  function handleUpload(event) {
+    const files = event.target.files;
+    const grid = document.getElementById('galleryGrid');
+    Array.from(files).forEach(file => {
+      const url = URL.createObjectURL(file);
+      const name = file.name.replace(/\.[^.]+$/, '');
+      const cat = name.toLowerCase().includes('before') || name.toLowerCase().includes('after') ? 'beforeafter'
+                : name.toLowerCase().includes('flash') || name.toLowerCase().includes('card') || name.toLowerCase().includes('sale') ? 'flashcard'
+                : 'product';
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.dataset.category = cat;
+      item.onclick = () => openLightbox(url, name);
+      item.innerHTML = `<img src="${url}" alt="${name}"><div class="gallery-label">${name}</div>`;
+      grid.appendChild(item);
+    });
+  }
+</script>
+</body>
+</html>
